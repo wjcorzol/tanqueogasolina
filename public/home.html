@@ -5,41 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <LINK REL=StyleSheet HREF="estilo.css" TYPE="text/css" MEDIA=screen>
+    <LINK REL=StyleSheet HREF="bootstrap.css" TYPE="text/css" MEDIA=screen>
 </head>
 <body>
-        <div class = "contenedor">
-            <div>
-                <img src="logo.png" alt="ExxonMobil" class='logo_login'>
-            </div>
-            <h1> Inicio de Sesión</h1>
-        <form class ="form">
-            <div class='input_text'>
-                <input type="text" name="usuario" id="user" placeholder="Usuario">
-            </div>
-            <br>
-            <div class='input_text'>
-                <input type="password" name="contraseña" id="pwd" placeholder = "Contraseña">
-            </div>
-            <br>
-
-            <button type="submit" > Ingresar </button>
-            <button type="submit2" >Registrarse </button>
-            <br>
-            <br>
-
-
-            <div class="col-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                  ¿Olvidaste la contraseña?
-                </label>
-              </div>
-            </div>
-          </form>
+  <main class="form-signin text-center" style="width: 25rem;">
+    <div>
+      <img src="ExxonMobil.png" alt="ExxonMobil" class='card-img-top'>
+    </div>
+    <div class="card-body"></div>
+      <h2 class="card-title"> Inicio de Sesión</h2>
+      <form>
+        <div class=''>
+            <input type="text" name="usuario" id="user" placeholder="Usuario" class="form-control">
         </div>
-
+        <br>
+        <div class=''>
+            <input type="password" name="contraseña" id="pwd" placeholder = "Contraseña" class="form-control">
+        </div>
+        <br>
+        <button type="submit" class="w-40 btn btn-lg btn-primary" > Ingresar </button>
+        <button type="submit2" class="w-40 btn btn-lg btn-secondary">Registrarse </button>
+        <br>
+        <br>
+        <div class="col-12">
+          <div class="">
+            <a href="#" class="card-link">
+              ¿Olvidaste la contraseña?
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
 
     
 </body>
