@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <LINK REL=StyleSheet HREF="bootstrap.css" TYPE="text/css" MEDIA=screen>
+</head>
+<body class="text-center">
+    <main class="container" style="width: 75rem;">
+        <div>
+            <img src="ExxonMobil.png" alt="ExxonMobil" class='card-img-top' style="width: 400px;">
+        </div>
+        <h1> Registro de usuarios</h1>
+        <br>
+        <form>
+            <div class="row g-1">
+                <div class="col-md-4">
+                    <input type="text" name="usuario" id="name" placeholder="Nombre y Apellido" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <select class="form-control" id="Tipodoc" required>
+                        <option selected disabled value="">Tipo de documento</option>
+                        <option>Cédula de ciudadania</option>
+                        <option>Cédula de extranjeria</option>
+                    </select>
+                </div>
+                
+                <div class="col-md-4">
+                    <input type="text" name="usuario" id="id" placeholder="No. Documento" class="form-control">
+                </div>
+
+                <div class="col-md-12">&nbsp;</div>
+            </div>
+            <div class="row g-1">
+                
+            
+                <div class="col-md-4">
+                    <input type="date" name="usuario" id="fnac" placeholder="Fecha de nacimiento" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <select class="form-control" id="sex" required>
+                        <option selected disabled value="">Sexo</option>
+                        <option>Masculino</option>
+                        <option>Femenino</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" name="usuario" id="city" placeholder="Ciudad" class="form-control">
+                </div>
+                <div class="col-md-12">&nbsp;</div>
+            </div>
+            <div class="row g-1">
+                <div class="col-md-4">
+                    <input type="text" name="usuario" id="user" placeholder="Usuario" class="form-control">
+                </div>
+                <div class="col-md-4">    
+                    <input type="password" name="contraseña" id="pwd" placeholder = "Contraseña" class="form-control">
+                </div>
+                <div class="col-md-4">    
+                    <input type="password" name="contraseña" id="pwd2" placeholder = "Valide contraseña" class="form-control">
+                </div>
+                <div class="col-md-12">&nbsp;</div>
+            </div>
+            <br>
+            <input type="checkbox" id="gridCheck">
+                <a href="#" class="card-link">Terminos y condiciones</a>
+            <br>
+            <br>
+            <button type="submit" class="col-md-4 btn-lg btn-primary"> Registrarse </button>
+            
+            <button type="submit2" class="col-md-5 btn-lg btn-secondary">Cancelar </button>
+            <br>
+            <br>
+
+            
+        </form>
+
+    </main>
+</body>
+</html>
