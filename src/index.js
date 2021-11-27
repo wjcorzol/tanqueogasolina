@@ -17,7 +17,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App/>} />
         <Route path="/registro" element={<Registro/>} />
-        
+        <Route path="/gestionarCliente" element={<GestionarCliente/>} />
         
       </Routes>
     </Router>

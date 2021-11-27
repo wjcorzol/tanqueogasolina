@@ -10,7 +10,6 @@ function GestionarCliente() {
           <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">            
             
             <a href="/" className="d-flex align-items-center mb-2 mb-lg-0 k text-decoration-none">
-              <svg className="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
             </a>
             
             <img src="img/ExxonMobil.png" alt="ExxonMobil" className='card-img-top' style={{width: '200px'}}/>
@@ -111,7 +110,7 @@ function GestionarCliente() {
             </tbody>
           </table>
           <div className="form-group row">
-            <div className=col-md-2>&nbsp;</div>
+            <div className="col-md-2">&nbsp;</div>
             <button className="col-md-4 btn btn-primary">Habilitar Todos</button>
             <button className="col-md-4 btn btn-secondary">Inhabilitar Todos</button>
           </div>
