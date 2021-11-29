@@ -8,7 +8,7 @@ import GestionarSaldo from './GestionarSaldo';
 import GestionarPrecio from './Gestionarprecio';
 import TanquearClienteAdmin from './TanquearClienteAdmin';
 import TanquearCliente from './TanquearCliente';
-
+import RegistrarVehiculo from './RegistrarVehiculo';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -25,6 +25,7 @@ ReactDOM.render(
         <Route path="/gestionarPrecio" element={<GestionarPrecio/>} />
         <Route path="/tanquearClienteAdmin" element={<TanquearClienteAdmin/>} />
         <Route path="/tanquearCliente" element={<TanquearCliente/>} />
+        <Route path="/registrarVehiculo" element={<RegistrarVehiculo/>} />
 
       </Routes>
     </Router>
