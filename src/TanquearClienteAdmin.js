@@ -62,7 +62,7 @@ function TanquearClienteAdmin() {
       <main className="container" style={{width: '75rem'}}>
         <div className="container">
           <div className="col-md-12">
-              <label for="buscarUsuarios" className="justify-content-center"><h3>Realizar un Tanqueo</h3></label>
+            <label for="buscarUsuarios" className="justify-content-center"><h3>Realizar un Tanqueo</h3></label>
           </div>
           <br/>
           <div className="container row g-1">
@@ -90,57 +90,50 @@ function TanquearClienteAdmin() {
               </div>  
             </div>
           </div>
-
-        </div>
-        <div className="col-md-12">&nbsp;</div>
-        <div className="col-md-12">&nbsp;</div>
-        <div className="container">
-          <div className="col-md-12">
-            <form action="" method="POST">
-              <div className="row g-2 form-group d-flex-wrap">
-                <div className="col-md-4">
-                  <select className="form-control" id="tipoCombustible" required>
-                    <option selected disabled value="">Tipo Combustible</option>
-                    <option>Corriente</option>
-                    <option>Extra</option>
-                  </select>
-                </div>
-                <div className="col-md-4">
-                  <input type="text" className="form-control" id="buscarUsuarios" name="buscarUsuarios" placeholder="Placa Vehiculo" required/>
-                </div>
-                <div className="col-md-4">
-                    <input type="number" className="form-control" id="buscarUsuarios" name="buscarUsuarios" placeholder="Galones" required/>
-                </div>
-              </div>
-          <div className="row g-1 form-group d-flex-wrap">
-                            
-            <div className="col-md-4">&nbsp;</div>
-
-              <div className="col-md-4">
-                <select className="form-control" id="medioPago" required>
-                    <option selected disabled value="">Medio de Pago</option>
-                    <option>Saldo Cliente</option>
-                    <option>Puntos Cliente</option>
-                </select>
-              </div>
-            </div>
-            <div className="col-md-12">&nbsp;</div>
-              <div className="row g-1 form-group d-flex-wrap ">
-                <div className="col-md-2">&nbsp;</div>
-                <div className="col-md-4">
-                      <button type="submit" className="btn btn-primary w-100">Registrar Tanqueo</button>
+          <div className="col-md-12">&nbsp;</div>
+          <div className="col-md-12">&nbsp;</div>
+          <div className="container">
+            <div className="col-md-12">
+              <form action="" method="POST">
+                <div className="row g-2 form-group d-flex-wrap">
+                  <div className="col-md-4">
+                    <select className="form-control" id="tipoCombustible" required>
+                      <option selected disabled value="">Tipo Combustible</option>
+                      <option>Corriente</option>
+                      <option>Extra</option>
+                    </select>
                   </div>
                   <div className="col-md-4">
-                      <button type="submit2" className="btn btn-secondary w-100">Cancelar</button>
+                    <input type="text" className="form-control" id="buscarUsuarios" name="buscarUsuarios" placeholder="Placa Vehiculo" required/>
                   </div>
-              </div>          
-
+                  <div className="col-md-4">
+                      <input type="number" className="form-control" id="buscarUsuarios" name="buscarUsuarios" placeholder="Galones" required/>
+                  </div>
+                </div>
+                <div className="row g-1 form-group d-flex-wrap">
+                  <div className="col-md-4">&nbsp;</div>
+                  <div className="col-md-4">
+                    <select className="form-control" id="medioPago" required>
+                        <option selected disabled value="">Medio de Pago</option>
+                        <option>Saldo Cliente</option>
+                        <option>Puntos Cliente</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="col-md-12">&nbsp;</div>
+                <div className="row g-1 form-group d-flex-wrap ">
+                  <div className="col-md-2">&nbsp;</div>
+                  <div className="col-md-4">
+                    <button type="submit" className="btn btn-primary w-100">Registrar Tanqueo</button>
+                  </div>
+                  <div className="col-md-4">
+                    <button type="submit2" className="btn btn-secondary w-100">Cancelar</button>
+                  </div>
+                </div>          
               </form>
             </div>
           </div>
-          <div></div>
         </div>
-        <br/>
       </main>
     </div>
   );
