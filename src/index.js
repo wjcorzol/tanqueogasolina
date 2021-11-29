@@ -6,6 +6,8 @@ import Registro from './Registro';
 import GestionarCliente from './GestionarCliente';
 import GestionarSaldo from './GestionarSaldo';
 import GestionarPrecio from './Gestionarprecio';
+import TanquearClienteAdmin from './TanquearClienteAdmin';
+import TanquearCliente from './TanquearCliente';
 
 
 import reportWebVitals from './reportWebVitals';
@@ -21,7 +23,9 @@ ReactDOM.render(
         <Route path="/gestionarCliente" element={<GestionarCliente/>} />
         <Route path="/gestionarSaldo" element={<GestionarSaldo/>} />
         <Route path="/gestionarPrecio" element={<GestionarPrecio/>} />
-        
+        <Route path="/tanquearClienteAdmin" element={<TanquearClienteAdmin/>} />
+        <Route path="/tanquearCliente" element={<TanquearCliente/>} />
+
       </Routes>
     </Router>
   </React.StrictMode>,
