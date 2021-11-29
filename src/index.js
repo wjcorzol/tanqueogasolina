@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import Registro from './Registro';
 import GestionarCliente from './GestionarCliente';
-
+import GestionarSaldo from './GestionarSaldo';
+import GestionarPrecio from './Gestionarprecio';
 
 
 import reportWebVitals from './reportWebVitals';
@@ -18,6 +19,8 @@ ReactDOM.render(
         <Route path="/" element={<App/>} />
         <Route path="/registro" element={<Registro/>} />
         <Route path="/gestionarCliente" element={<GestionarCliente/>} />
+        <Route path="/gestionarSaldo" element={<GestionarSaldo/>} />
+        <Route path="/gestionarPrecio" element={<GestionarPrecio/>} />
         
       </Routes>
     </Router>
