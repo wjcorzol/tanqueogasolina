@@ -1,5 +1,5 @@
 import React from 'react';
-import { link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 function GestionarPrecio() {
   return (
@@ -9,10 +9,9 @@ function GestionarPrecio() {
         <div className="container">
           <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">            
             
-            <a href="/" className="d-flex align-items-center mb-2 mb-lg-0 k text-decoration-none">
-            </a>
-            
-            <img src="img/ExxonMobil.png" alt="ExxonMobil" className='card-img-top' style={{width: '200px'}}/>
+            <Link to="/" className="d-flex align-items-center mb-2 mb-lg-0 k text-decoration-none">
+              <img src="img/ExxonMobil.png" alt="ExxonMobil" className='card-img-top' style={{width: '200px'}}/>
+            </Link>
             
             <div>&nbsp;</div>
             <div>&nbsp;</div>
@@ -37,20 +36,20 @@ function GestionarPrecio() {
             </div>
             
             <div className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-              <a href="#">Nombre de Usuario</a>
+              <Link to="#">Nombre de Usuario</Link>
               <br/>
-              <a href="#">Cerrar Sesión</a>
+              <Link to="#">Cerrar Sesión</Link>
             </div>
             
             <hr style={{border:'2px'}}/>
             
             <div className= "container">
               <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" className="nav-link px-2 text-white">Ingreso de combustibles</a></li>
+                <li><Link to="/gestionarPrecio" className="nav-link px-2 text-white">Ingreso de combustibles</Link></li>
                 <div className="nav-link px-2 text-white">|</div>
-                <li><a href="#" className="nav-link px-2 text-white">Tanquear Cliente</a></li>
+                <li><Link to="/tanquearClienteAdmin" className="nav-link px-2 text-white">Tanquear Cliente</Link></li>
                 <div className="nav-link px-2 text-white">|</div>
-                <li><a href="#" className="nav-link px-2 text-white">Inhabilitar/Habilitar clientes</a></li>
+                <li><Link to="/gestionarCliente" className="nav-link px-2 text-white">Inhabilitar/Habilitar clientes</Link></li>
               </ul>
             </div>
           </div>

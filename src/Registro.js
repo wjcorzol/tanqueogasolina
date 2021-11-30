@@ -1,12 +1,14 @@
 import React from 'react';
-import { link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 function Registro() {
   return (
     <div id="wrapper" class="text-center">
       <main className="container" style={{width: '75rem'}}>
         <div>
+          <Link to="/" className="d-flex align-items-center mb-2 mb-lg-0 k text-decoration-none">
             <img src="img/ExxonMobil.png" alt="ExxonMobil" className='card-img-top' style={{width: '400px'}}/>
+          </Link>
         </div>
         <h1> Registro de usuarios</h1>
         <br/>
@@ -67,7 +69,7 @@ function Registro() {
             </div>
             <br/>
             <input type="checkbox" id="gridCheck"/>
-            <a href="#" className="card-link">Terminos y condiciones</a>
+            <Link to="#" className="card-link">Terminos y condiciones</Link>
             <br/>
             <br/>
             <div className="row">
