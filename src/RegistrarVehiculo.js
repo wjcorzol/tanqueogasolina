@@ -74,7 +74,7 @@ function RegistrarVehiculo() {
 
                   <div className="col-md-4">
                     <select className="form-control" id="tipoVehiculo">
-                      <option selected disabled value="">Tipo Vehiculo</option>
+                      <option disabled value="">Tipo Vehiculo</option>
                       <option>Automovil</option>
                       <option>Camioneta</option>
                     </select>

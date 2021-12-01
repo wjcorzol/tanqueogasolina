@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 function Registro() {
   return (
-    <div id="wrapper" class="text-center">
+    <div id="wrapper" className="text-center">
       <main className="container" style={{width: '75rem'}}>
         <div>
           <Link to="/" className="d-flex align-items-center mb-2 mb-lg-0 k text-decoration-none">
@@ -21,7 +21,7 @@ function Registro() {
 
                 <div className="col-md-4">
                     <select className="form-control" id="Tipodoc" required>
-                        <option selected disabled value="">Tipo de documento</option>
+                        <option disabled value="">Tipo de documento</option>
                         <option>Cédula de ciudadania</option>
                         <option>Cédula de extranjeria</option>
                     </select>
@@ -42,7 +42,7 @@ function Registro() {
 
               <div className="col-md-4">
                   <select className="form-control" id="sex" required>
-                      <option selected disabled value="">Sexo</option>
+                      <option disabled value="">Sexo</option>
                       <option>Masculino</option>
                       <option>Femenino</option>
                   </select>

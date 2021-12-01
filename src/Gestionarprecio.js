@@ -57,7 +57,7 @@ function GestionarPrecio() {
       </header>
 
       <div className="col-md-12 align-items-center">
-        <label for="buscarUsuarios" className="justify-content-center"><h3>Usuarios Externos</h3></label>
+        <label htmlFor="buscarUsuarios" className="justify-content-center"><h3>Usuarios Externos</h3></label>
       </div>
 
       <br/>
