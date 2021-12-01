@@ -65,7 +65,7 @@ function GestionarPrecio() {
       <main className="container" style={{width: '75rem'}}>
       
         <form>
-            <h6> Ingresar Lote de combustible</h6>
+            <h3 className="text-center"> Ingresar Lote de combustible</h3>
             <br/>
             <div className="row">
               <div className="col-md-4">

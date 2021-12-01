@@ -65,7 +65,7 @@ function GestionarSaldo() {
       <main className="container" style={{width: '75rem'}}>
       
         <form>
-            <h3> Agregar Saldo</h3>
+            <h3 className="text-center"> Agregar Saldo</h3>
             <br/>
             <div className="row g-1">
                 <div className="col-md-6">

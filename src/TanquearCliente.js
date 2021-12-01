@@ -60,8 +60,8 @@ function TanquearCliente() {
 
       <main className="container" style={{width: '75rem'}}>
         <div className="container">
-          <div className="col-md-12">
-            <label htmlFor="buscarUsuarios" className="justify-content-center"><h3>Realizar un Tanqueo</h3></label>
+          <div className="col-md-12 text-center">
+            <label htmlFor="buscarUsuarios" ><h3>Realizar un Tanqueo</h3></label>
           </div>
           <br/>
           <div className="row g-1">
