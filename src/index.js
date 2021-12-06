@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import Registro from './Registro';
-import GestionarCliente from './GestionarCliente';
-import GestionarSaldo from './GestionarSaldo';
-import GestionarPrecio from './Gestionarprecio';
-import TanquearClienteAdmin from './TanquearClienteAdmin';
-import TanquearCliente from './TanquearCliente';
-import RegistrarVehiculo from './RegistrarVehiculo';
+import App from './rutas/App';
+import Registro from './rutas/Registro';
+import GestionarCliente from './rutas/GestionarCliente';
+import GestionarSaldo from './rutas/GestionarSaldo';
+import GestionarPrecio from './rutas/Gestionarprecio';
+import TanquearClienteAdmin from './rutas/TanquearClienteAdmin';
+import TanquearCliente from './rutas/TanquearCliente';
+import RegistrarVehiculo from './rutas/RegistrarVehiculo';
 
 import reportWebVitals from './reportWebVitals';
 
