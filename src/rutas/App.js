@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import Login from '../contenedores/login';
 import Layout from '../componentes/Layout';
 

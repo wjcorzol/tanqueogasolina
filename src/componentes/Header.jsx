@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NavAdmin from "./NavAdmin";
 
+export default function Header() {
 
-export default function HeaderAdmin() {
+
     let corriente = {"precio":"8400", "cantidad":"10489"};
 return (
     <header className="bg-primary text-white">
@@ -18,13 +19,13 @@ return (
 
                 <div className="col-md-6">
                     <div className="row">
-                        <div className="card col-md-5" >
+                        <div className="card col-md-5 border rounded-lg" >
                             <h5 className="card-title">Corriente</h5>
                             <label htmlFor="cantidadCorriente" className="card-text">{corriente.cantidad+" Gal."}</label>
                             <label htmlFor="precioCorriente" className="card-text">{"$"+corriente.precio}</label>
                         </div>
                         <div className="col">&nbsp;</div>
-                        <div className="card col-md-5" >
+                        <div className="card col-md-5 border rounded-lg" >
                             <h5 className="card-title">Extra</h5>
                             <label htmlFor="cantidadExtra" className="card-text">6.256  Gal.</label>
                             <label htmlFor="precioExtra" className="card-text">$ 9.489</label> 
@@ -48,7 +49,7 @@ return (
                     </div>
                 </div>
             </div>
-            <NavAdmin/>
+            
         </div>
     </header>);
 }

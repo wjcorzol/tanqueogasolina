@@ -1,12 +1,13 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import HeaderAdmin from '../componentes/HeaderAdmin';
+import Header from '../componentes/Header';
+import NavAdmin from '../componentes/NavAdmin';
 
 function TanquearClienteAdmin() {
   return (
     <div id="wrapper">
       
-      <HeaderAdmin/>
+      <Header />
+      <NavAdmin />
 
       <main className="container" style={{width: '75rem'}}>
         <div className="container">

@@ -1,36 +1,45 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './rutas/App';
-import Registro from './rutas/Registro';
-import GestionarCliente from './rutas/GestionarCliente';
-import GestionarSaldo from './rutas/GestionarSaldo';
-import GestionarPrecio from './rutas/Gestionarprecio';
-import TanquearClienteAdmin from './rutas/TanquearClienteAdmin';
-import TanquearCliente from './rutas/TanquearCliente';
-import RegistrarVehiculo from './rutas/RegistrarVehiculo';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./rutas/App";
+import Registro from "./paginas/Registro";
+import GestionarCliente from "./rutas/GestionarCliente";
+import GestionarSaldo from "./rutas/GestionarSaldo";
+import GestionarPrecio from "./rutas/Gestionarprecio";
+import TanquearClienteAdmin from "./rutas/TanquearClienteAdmin";
+import TanquearCliente from "./rutas/TanquearCliente";
+import RegistrarVehiculo from "./rutas/RegistrarVehiculo";
+import Error404 from "./paginas/Error404";
 
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from "./reportWebVitals";
 
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element={<App/>} />
-        <Route path="/registro" element={<Registro/>} />
-        <Route path="/gestionarCliente" element={<GestionarCliente/>} />
-        <Route path="/gestionarSaldo" element={<GestionarSaldo/>} />
-        <Route path="/gestionarPrecio" element={<GestionarPrecio/>} />
-        <Route path="/tanquearClienteAdmin" element={<TanquearClienteAdmin/>} />
-        <Route path="/tanquearCliente" element={<TanquearCliente/>} />
-        <Route path="/registrarVehiculo" element={<RegistrarVehiculo/>} />
-
+        <Route exact path="/" element={<App />} />
+        <Route exact path="/registro" element={<Registro />} />
+        <Route exact path="/gestionarCliente" element={<GestionarCliente />} />
+        <Route exact path="/gestionarSaldo" element={<GestionarSaldo />} />
+        <Route exact path="/gestionarPrecio" element={<GestionarPrecio />} />
+        <Route
+          exact
+          path="/tanquearClienteAdmin"
+          element={<TanquearClienteAdmin />}
+        />
+        <Route exact path="/tanquearCliente" element={<TanquearCliente />} />
+        <Route
+          exact
+          path="/registrarVehiculo"
+          element={<RegistrarVehiculo />}
+        />
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </Router>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,12 +1,13 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import HeaderAdmin from '../componentes/HeaderAdmin';
+import Header from '../componentes/Header';
+import NavAdmin from '../componentes/NavAdmin';
 
 function GestionarPrecio() {
   return (
     <div id="wrapper">
       
-      <HeaderAdmin/>
+      <Header />
+      <NavAdmin />
 
       <div className="col-md-12 align-items-center">
         <label htmlFor="buscarUsuarios" className="justify-content-center"><h3>Usuarios Externos</h3></label>
