@@ -6,8 +6,8 @@ import Registro from "./paginas/Registro";
 import GestionarCliente from "./rutas/GestionarCliente";
 import GestionarSaldo from "./rutas/GestionarSaldo";
 import GestionarPrecio from "./rutas/Gestionarprecio";
-import TanquearClienteAdmin from "./rutas/TanquearClienteAdmin";
-import TanquearCliente from "./rutas/TanquearCliente";
+import TanquearClienteAdmin from "./paginas/TanquearClienteAdmin";
+import TanquearCliente from "./paginas/TanquearCliente";
 import RegistrarVehiculo from "./rutas/RegistrarVehiculo";
 import Error404 from "./paginas/Error404";
 

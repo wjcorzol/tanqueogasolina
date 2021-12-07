@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import NavAdmin from "./NavAdmin";
 
 export default function Header() {
 

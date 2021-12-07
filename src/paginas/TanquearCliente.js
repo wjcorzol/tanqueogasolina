@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Header from '../componentes/Header';
 import NavUsers from '../componentes/NavUsers';
 
 function TanquearCliente() {
+  const formTanquearCliente = useRef(null);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(formTanquearCliente.current);
+    const data = {
+      tipoCombustible: formData.get('txtTipo'),
+      placaVehiculo: formData.get('txtPlaca'),
+      cantidad: formData.get('txtCantidad'),
+      medioPago: formData.get('txtMedioPago')
+    };
+    console.log(data);
+  };
   return (
     <div id="wrapper">
       
@@ -35,29 +48,29 @@ function TanquearCliente() {
           <div className="col-md-12">&nbsp;</div>
           <div className="container">
             <div className="col-md-12">
-              <form action="" method="POST">
+              <form action="/" ref={formTanquearCliente}>
                 <div className="row g-2 form-group d-flex-wrap">
                   <div className="col-md-4">
-                    <select className="form-control" id="tipoCombustible" required>
+                    <select className="form-control" id="txtTipo" name="txtTipo" required>
                       <option disabled value="">Tipo Combustible</option>
-                      <option>Corriente</option>
-                      <option>Extra</option>
+                      <option value="corriente">Corriente</option>
+                      <option value="extra">Extra</option>
                     </select>
                   </div>
                   <div className="col-md-4">
-                    <input type="text" className="form-control" id="buscarUsuarios" name="buscarUsuarios" placeholder="Placa Vehiculo" required/>
+                    <input type="text" className="form-control" id="txtPlaca" name="txtPlaca" placeholder="Placa Vehiculo" required/>
                   </div>
                   <div className="col-md-4">
-                      <input type="number" className="form-control" id="buscarUsuarios" name="buscarUsuarios" placeholder="Galones" required/>
+                      <input type="number" className="form-control" id="txtCantidad" name="txtCantidad" placeholder="Galones" required/>
                   </div>
                 </div>
                 <div className="row g-1 form-group d-flex-wrap">
                   <div className="col-md-4">&nbsp;</div>
                   <div className="col-md-4">
-                    <select className="form-control" id="medioPago" required>
+                    <select className="form-control" id="txtMedioPago" name="txtMedioPago" required>
                         <option disabled value="">Medio de Pago</option>
-                        <option>Saldo Cliente</option>
-                        <option>Puntos Cliente</option>
+                        <option value="1">Saldo Cliente</option>
+                        <option value="2">Puntos Cliente</option>
                     </select>
                   </div>
                 </div>
@@ -65,7 +78,7 @@ function TanquearCliente() {
                 <div className="row g-1 form-group d-flex-wrap ">
                   <div className="col-md-2">&nbsp;</div>
                   <div className="col-md-4">
-                    <button type="submit" className="btn btn-primary w-100">Registrar Tanqueo</button>
+                    <button className="btn btn-primary w-100" onClick={handleSubmit}>Registrar Tanqueo</button>
                   </div>
                   <div className="col-md-4">
                     <button type="submit2" className="btn btn-secondary w-100">Cancelar</button>
