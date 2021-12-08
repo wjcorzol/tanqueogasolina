@@ -1,19 +1,23 @@
 import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
-// import USERS from "../mocks/usuarios";
+import USERS from "../mocks/usuarios";
 
 const Login = () => {
     const formLogin = useRef(null);
-
+    
     const handleSubmit = (event) => {
         event.preventDefault();
         const formData = new FormData(formLogin.current);
         const data = {
-            user: formData.get('txtUser'),
-            pass: formData.get('txtPass'),
+            usuario: formData.get('txtUser'),
+            contrasena: formData.get('txtPass'),
         }
+        console.log(USERS);
         console.log(data);
+        const login = USERS.some(user => user.usuario === data.usuario && user.contrasena === data.contrasena);
+        console.log(login);
+        
     }
 
     return (

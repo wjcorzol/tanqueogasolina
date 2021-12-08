@@ -3,38 +3,31 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./rutas/App";
 import Registro from "./paginas/Registro";
-import GestionarCliente from "./rutas/GestionarCliente";
-import GestionarSaldo from "./rutas/GestionarSaldo";
-import GestionarPrecio from "./rutas/Gestionarprecio";
+import GestionarCliente from "./paginas/GestionarCliente";
+import GestionarSaldo from "./paginas/GestionarSaldo";
+import GestionarPrecio from "./paginas/Gestionarprecio";
 import TanquearClienteAdmin from "./paginas/TanquearClienteAdmin";
 import TanquearCliente from "./paginas/TanquearCliente";
-import RegistrarVehiculo from "./rutas/RegistrarVehiculo";
+import RegistrarVehiculo from "./paginas/RegistrarVehiculo";
 import Error404 from "./paginas/Error404";
 
 import reportWebVitals from "./reportWebVitals";
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes>
         <Route exact path="/" element={<App />} />
+        
         <Route exact path="/registro" element={<Registro />} />
         <Route exact path="/gestionarCliente" element={<GestionarCliente />} />
         <Route exact path="/gestionarSaldo" element={<GestionarSaldo />} />
         <Route exact path="/gestionarPrecio" element={<GestionarPrecio />} />
-        <Route
-          exact
-          path="/tanquearClienteAdmin"
-          element={<TanquearClienteAdmin />}
-        />
+        <Route exact path="/tanquearClienteAdmin" element={<TanquearClienteAdmin />}/>
         <Route exact path="/tanquearCliente" element={<TanquearCliente />} />
-        <Route
-          exact
-          path="/registrarVehiculo"
-          element={<RegistrarVehiculo />}
-        />
+        <Route exact path="/registrarVehiculo" element={<RegistrarVehiculo />}/>
         <Route path="*" element={<Error404 />} />
       </Routes>
     </Router>

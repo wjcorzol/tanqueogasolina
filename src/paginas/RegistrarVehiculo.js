@@ -56,7 +56,7 @@ function RegistrarVehiculo() {
                 <div className="row g-1 form-group d-flex-wrap ">
                   <div className="col-md-2">&nbsp;</div>
                   <div className="col-md-4">
-                    <button type="submit" className="btn btn-primary w-100" onClick={handleSubmit}>Registrar</button>
+                    <button className="btn btn-primary w-100" onClick={handleSubmit}>Registrar</button>
                   </div>
                   <div className="col-md-4">
                     <button type="submit2" className="btn btn-secondary w-100">Cancelar</button>
