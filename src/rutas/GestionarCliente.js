@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Header from '../componentes/Header';
 import NavAdmin from '../componentes/NavAdmin';
 
 function GestionarCliente() {
+  const formGestionarCliente = useRef(null);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(formGestionarCliente.current);
+    const data = {
+      cliente: formData.get('idCliente'),
+    };
+    console.log(data);
+  };
+  
   return (
     <div id="wrapper">
 
@@ -18,14 +29,14 @@ function GestionarCliente() {
 
       <main className="container d-flex">
         <div className="container col-md-4">
-          <form action="" className="">
+          <form action="" className="" ref={formGestionarCliente}>
             <div className="form-group">
               <input type="text" id="idCliente" name="idCliente" placeholder="Id Cliente" className="form-control"/>
             </div>
             <br/>
             <br/>
             <div className="form-group align-items-center">
-              <button type="submit" className="col-md-12 btn-lg btn-secondary">Consultar Cliente</button>    
+              <button type="submit" className="col-md-12 btn-lg btn-secondary" onClick={handleSubmit}>Consultar Cliente</button>    
             </div>
           </form>
         </div>
