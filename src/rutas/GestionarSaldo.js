@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Header from '../componentes/Header';
 import NavUsers from '../componentes/NavUsers';
 
 function GestionarSaldo() {
+  const formGestionarSaldo = useRef(null);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(formGestionarSaldo.current);
+    const data = {
+      saldo: formData.get('añadirvalor'),
+    };
+    console.log(data);
+  };
+
   return (
     <>
 
@@ -17,7 +28,7 @@ function GestionarSaldo() {
 
       <main className="container" style={{ width: '75rem' }}>
 
-        <form>
+        <form ref={formGestionarSaldo}>
           <h3 className="text-center"> Agregar Saldo</h3>
           <br />
           <div className="row g-1">
@@ -43,7 +54,7 @@ function GestionarSaldo() {
               <input type="number" name="añadirvalor" id="valortanqueo" placeholder="Valor a añadir" className="form-control2" />
             </div>
 
-            <button type="submit" className="col-md-3 btn-lg btn-primary"> Registrar </button>
+            <button type="submit" className="col-md-3 btn-lg btn-primary" onClick={handleSubmit}> Registrar </button>
           </div>
 
         </form>
