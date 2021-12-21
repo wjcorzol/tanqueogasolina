@@ -22,7 +22,6 @@ const Login = () => {
         .then((respuesta) => {
             if (respuesta.data) {
                 // console.log(respuesta.data.nombre)
-                window.location.href ='./gestionarprecio';
                 cookies.set("nombre", respuesta.data.nombre, { path: "/" });
                 cookies.set("usuario", respuesta.data.usuario, { path: "/" }); 
                 cookies.set("rol", respuesta.data.rol, { path: "/" });
@@ -44,6 +43,9 @@ const Login = () => {
     })
 }   
 
+const handleRegistro = () => {
+    window.location.href ='./registro';
+}
 
     // useEffect(() => {
     //     axios
@@ -97,7 +99,7 @@ const Login = () => {
                                 <button className="w-100 btn btn-lg btn-primary" type="submit" > Ingresar </button>
                             </div>
                             <div className="container col-sm-6">
-                                <button className="w-100 btn btn-lg btn-secondary" >Registrarse </button>
+                                <button className="w-100 btn btn-lg btn-secondary" onClick={handleRegistro} >Registrarse </button>
                             </div>
                         </div>
                         <br/>

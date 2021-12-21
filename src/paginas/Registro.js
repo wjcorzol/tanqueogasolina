@@ -1,23 +1,51 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import axios from "axios";
+import Cookies from "universal-cookie";
+
+const URLAPIREGISTRO = "http://localhost:3222/api/v1/usuario/registro";
+const cookies = new Cookies();
+
 
 function Registro() {
+
+  const handleCancelar = () => {
+    window.location.href = "/";
+  }
+
   const formRegistro = useRef(null);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(formRegistro.current);
     const data = {
       nombre: formData.get('txtNombre'),
-      tipoDoc: formData.get('txtTipoDoc'),
-      numDoc: formData.get('txtNumDoc'),
-      fechaNac: formData.get('txtFechaNac'),
+      tipoDocumento: formData.get('txtTipoDoc'),
+      numeroDocumento: formData.get('txtNumDoc'),
+      nacimiento: formData.get('txtFechaNac'),
       sexo: formData.get('txtSexo'),
       ciudad: formData.get('txtCiudad'),
-      user: formData.get('txtUser'),
-      pass: formData.get('txtPass'),
+      usuario: formData.get('txtUser'),
+      contraseña: formData.get('txtPass'),
     };
-    console.log(data);
+
+    const respuesta = await axios.post(URLAPIREGISTRO, data)
+    .then((respuesta) => {
+      
+      return respuesta.data.usuarioCreado;})
+    .then((respuesta) => {
+      if (respuesta) {
+        console.log(respuesta);
+
+        cookies.set("nombre", respuesta.nombre, { path: "/" });
+        cookies.set("usuario", respuesta.usuario, { path: "/" }); 
+        cookies.set("rol", respuesta.rol, { path: "/" });
+        window.location.href ='./gestionarsaldo';
+      }
+      
+    });
+    
+    // console.log(respuesta);
   };
 
   return (
@@ -41,13 +69,13 @@ function Registro() {
             <div className="col-md-4">
               <select className="form-control" name="txtTipoDoc" required>
                 <option disabled value="">Tipo de documento</option>
-                <option value="1">Cédula de ciudadania</option>
-                <option value="2">Cédula de extranjeria</option>
+                <option value="Cédula de ciudadania">Cédula de ciudadania</option>
+                <option value="Cédula de extranjeria">Cédula de extranjeria</option>
               </select>
             </div>
 
             <div className="col-md-4">
-              <input type="text" name="txtNumDoc" id="txtNumDoc" placeholder="No. Documento" className="form-control" required />
+              <input type="number" name="txtNumDoc" id="txtNumDoc" placeholder="No. Documento" className="form-control" required />
             </div>
 
             <div className="col-md-12">&nbsp;</div>
@@ -62,8 +90,8 @@ function Registro() {
             <div className="col-md-4">
               <select className="form-control" id="txtSexo" name="txtSexo" required>
                 <option disabled value="">Sexo</option>
-                <option value="1">Masculino</option>
-                <option value="2">Femenino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
               </select>
             </div>
 
@@ -97,7 +125,7 @@ function Registro() {
               <button  className="btn-lg btn-primary w-100" onClick={handleSubmit}> Registrarse </button>
             </div>
             <div className="col-md-4">
-              <button type="submit2" className="btn-lg btn-secondary w-100">Cancelar </button>
+              <button type="submit2" className="btn-lg btn-secondary w-100" onClick ={handleCancelar}>Cancelar </button>
             </div>
           </div>
           <br />
