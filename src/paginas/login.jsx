@@ -8,7 +8,7 @@ const cookies = new Cookies();
 
 const Login = () => {
 
-    const [USERS, setUSERS] = useState([]);
+    // const [USERS, setUSERS] = useState([]);
 
     const [usuario, setUsuario] = useState("");
     const [contraseña, setContraseña] = useState("");
@@ -16,13 +16,33 @@ const Login = () => {
     const handleLogin = async (event) => {
         event.preventDefault();
         const respuesta = await axios.post(URLAPIUSAURIOS,  { usuario: usuario, contraseña: contraseña } )
-        if (respuesta.data) {
-            window.location.href ='./gestionarprecio';
-        }
-        else {
-            console.log(respuesta);
-        }
-    }
+        .then((respuesta) => {
+            return respuesta.data;
+        })
+        .then((respuesta) => {
+            if (respuesta.data) {
+                // console.log(respuesta.data.nombre)
+                window.location.href ='./gestionarprecio';
+                cookies.set("nombre", respuesta.data.nombre, { path: "/" });
+                cookies.set("usuario", respuesta.data.usuario, { path: "/" }); 
+                cookies.set("rol", respuesta.data.rol, { path: "/" });
+
+                if (respuesta.data.rol === "usuario externo") {
+                    window.location.href ='./gestionarsaldo';
+                }
+                else if (respuesta.data.rol === "usuario interno") {
+                    window.location.href ='./gestionarprecio';
+                }
+
+            
+                // alert(`Bienvenido ${cookies.get("nombre")} ${cookies.get("rol")}`);
+
+            }
+            else {
+                console.log(respuesta);
+            }
+    })
+}   
 
 
     // useEffect(() => {
@@ -38,22 +58,22 @@ const Login = () => {
 
     const formLogin = useRef(null);
     
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const formData = new FormData(formLogin.current);
-        const data = {
-            usuario: formData.get('txtUser'),
-            contrasena: formData.get('txtPass'),
-        }
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     const formData = new FormData(formLogin.current);
+    //     const data = {
+    //         usuario: formData.get('txtUser'),
+    //         contrasena: formData.get('txtPass'),
+    //     }
         
-        console.log(data);
-        const login = USERS.some(user => user.usuario === data.usuario && user.contrasena === data.contrasena);
+    //     console.log(data);
+    //     const login = USERS.some(user => user.usuario === data.usuario && user.contrasena === data.contrasena);
         
-        if (login) {
-            window.location.href ='./gestionarprecio';
-        }
+    //     if (login) {
+    //         window.location.href ='./gestionarprecio';
+    //     }
         
-    }
+    // }
 
     return (
         <div id="wrapper">
