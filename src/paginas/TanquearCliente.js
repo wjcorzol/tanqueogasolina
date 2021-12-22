@@ -1,20 +1,31 @@
 import React, { useRef } from 'react';
 import Header from '../componentes/Header';
 import NavUsers from '../componentes/NavUsers';
+import axios from "axios";
+import Cookies from "universal-cookie";
+
+const URLAPITANQUEO = "http://localhost:3222/api/v1/tanqueo/realizartanqueo";
+const cookies = new Cookies();
 
 function TanquearCliente() {
   const formTanquearCliente = useRef(null);
 
+  const handleCancelar = () => {
+    window.location.href = "/tanquearcliente";
+  }
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(formTanquearCliente.current);
     const data = {
+      usuario: cookies.get('usuario'),
       tipoCombustible: formData.get('txtTipo'),
       placaVehiculo: formData.get('txtPlaca'),
-      cantidad: formData.get('txtCantidad'),
-      medioPago: formData.get('txtMedioPago')
+      galones: formData.get('txtCantidad'),
+      medioDePago: formData.get('txtMedioPago')
     };
     console.log(data);
+    const respuesta = axios.post(URLAPITANQUEO, data);
   };
   return (
     <div id="wrapper">
@@ -69,8 +80,8 @@ function TanquearCliente() {
                   <div className="col-md-4">
                     <select className="form-control" id="txtMedioPago" name="txtMedioPago" required>
                         <option disabled value="">Medio de Pago</option>
-                        <option value="1">Saldo Cliente</option>
-                        <option value="2">Puntos Cliente</option>
+                        <option>Saldo Cliente</option>
+                        <option>Puntos Cliente</option>
                     </select>
                   </div>
                 </div>
@@ -81,7 +92,7 @@ function TanquearCliente() {
                     <button className="btn btn-primary w-100" onClick={handleSubmit}>Registrar Tanqueo</button>
                   </div>
                   <div className="col-md-4">
-                    <button type="submit2" className="btn btn-secondary w-100">Cancelar</button>
+                    <button type="submit2" className="btn btn-secondary w-100" onClick={handleCancelar}>Cancelar</button>
                   </div>
                 </div>          
               </form>

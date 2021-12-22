@@ -1,6 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import INVENTARIO from "../mocks/inventario";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
+
+const nombreUsuario = cookies.get("nombre");
+
+
 
 export default function Header() {
     const rtaInventario = INVENTARIO.map((inventario) => {
@@ -18,7 +25,13 @@ export default function Header() {
             }),
         };
     });
+    const logout = () => {
+        cookies.remove('usuario', {path: "/"});
+        cookies.remove('nombre', {path: "/"});
+        cookies.remove('rol', {path: "/"});
 
+        window.location.href='./';
+    }
     return (
         <header className="bg-primary text-white">
             <div className="container-fluid">
@@ -79,9 +92,9 @@ export default function Header() {
                         <div className="col-md-8">
                             <div className="text-start">
                                 <div className="row">&nbsp;</div>
-                                <label htmlFor="nombreUsuario">Nombre de Usuario</label>
+                                <label htmlFor="nombreUsuario">{nombreUsuario}</label>
                                 <br />
-                                <Link to="#">Cerrar Sesión</Link>
+                                <button className="btn btn-primary" onClick={logout}>Cerrar Sesión</button>
                             </div>
                         </div>
                     </div>

@@ -1,20 +1,54 @@
 import React, { useRef } from 'react';
 import Header from '../componentes/Header';
 import NavUsers from '../componentes/NavUsers';
+import axios from "axios";
+import Cookies from 'universal-cookie';
+
+const URLAPIREGISTROVEHICULO = "http://localhost:3222/api/v1/vehiculo/registro"
+const cookies = new Cookies();
+
 
 function RegistrarVehiculo() {
 
+  const handleCancelar = () => {
+    window.location.href = "/registrarvehiculo";
+  }
+
+
   const formRegistrarVehiculo = useRef(null);
 
-  const handleSubmit = (event) => {
+  const componentDidMount = () =>{
+    if(!cookies.get('usuario')){
+        window.location.href="./";
+    }
+  }
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(formRegistrarVehiculo.current);
     const data = {
-      placa: formData.get('placaVehiculo'),
-      tipoCarro: formData.get('tipoVehiculo'),
-      marca: formData.get('marcaVehiculo'),
+      usuario: cookies.get('usuario'),
+      placaVehiculo: formData.get('placaVehiculo'),
+      tipoVehiculo: formData.get('tipoVehiculo'),
+      marcaVehiculo: formData.get('marcaVehiculo'),
     };
-    console.log(data);
+
+    console.log(data)
+
+    const respuesta = await axios.post(URLAPIREGISTROVEHICULO, data)
+
+    console.log(respuesta)
+    // .then((respuesta) => {
+    //   return respuesta.data,
+    //   console.log(respuesta.data);
+    //   return respuesta.data.vehiculoCreado;})
+    // .then((respuesta) => {
+    //   if (respuesta) {
+    //     console.log(respuesta);
+    //     window.location.href ='./registrarvehiculo';
+    //   }
+    
+    // });
   };
 
   return (
@@ -59,7 +93,7 @@ function RegistrarVehiculo() {
                     <button className="btn btn-primary w-100" onClick={handleSubmit}>Registrar</button>
                   </div>
                   <div className="col-md-4">
-                    <button type="submit2" className="btn btn-secondary w-100">Cancelar</button>
+                    <button type="submit2" className="btn btn-secondary w-100" onClick={handleCancelar}>Cancelar</button>
                   </div>
                 </div>
               </form>

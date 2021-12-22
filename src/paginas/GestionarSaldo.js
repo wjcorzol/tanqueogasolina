@@ -1,6 +1,11 @@
 import React, { useRef } from 'react';
 import Header from '../componentes/Header';
 import NavUsers from '../componentes/NavUsers';
+import axios from "axios";
+import Cookies from "universal-cookie";
+
+const URLAPISALDO = "http://localhost:3222/api/v1/saldo/ingresar";
+const cookies = new Cookies();
 
 function GestionarSaldo() {
   const formGestionarSaldo = useRef(null);
@@ -9,9 +14,11 @@ function GestionarSaldo() {
     event.preventDefault();
     const formData = new FormData(formGestionarSaldo.current);
     const data = {
-      saldo: formData.get('añadirvalor'),
+      usuario: cookies.get('usuario'),
+      ingresoEfectivo: formData.get('añadirvalor'),
     };
     console.log(data);
+    const respuesta = axios.post(URLAPISALDO, data);
   };
 
   return (

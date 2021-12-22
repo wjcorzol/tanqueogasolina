@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { Link} from "react-router-dom";
 import axios from "axios";
 import Cookies from "universal-cookie";
@@ -13,6 +13,12 @@ const Login = () => {
     const [usuario, setUsuario] = useState("");
     const [contraseña, setContraseña] = useState("");
 
+    // const componentDidMount = () =>{
+    //     if(!cookies.get('usuario')){
+    //         window.location.href="./";
+    //     }
+    // }
+
     const handleLogin = async (event) => {
         event.preventDefault();
         const respuesta = await axios.post(URLAPIUSAURIOS,  { usuario: usuario, contraseña: contraseña } )
@@ -21,10 +27,10 @@ const Login = () => {
         })
         .then((respuesta) => {
             if (respuesta.data) {
-                // console.log(respuesta.data.nombre)
-                cookies.set("nombre", respuesta.data.nombre, { path: "/" });
-                cookies.set("usuario", respuesta.data.usuario, { path: "/" }); 
-                cookies.set("rol", respuesta.data.rol, { path: "/" });
+                var usuario = respuesta.data;
+                cookies.set("nombre", usuario.nombre, { path: "/" });
+                cookies.set("usuario", usuario.usuario, { path: "/" }); 
+                cookies.set("rol", usuario.rol, { path: "/" });
 
                 if (respuesta.data.rol === "usuario externo") {
                     window.location.href ='./gestionarsaldo';
@@ -32,7 +38,7 @@ const Login = () => {
                 else if (respuesta.data.rol === "usuario interno") {
                     window.location.href ='./gestionarprecio';
                 }
-
+                
             
                 // alert(`Bienvenido ${cookies.get("nombre")} ${cookies.get("rol")}`);
 

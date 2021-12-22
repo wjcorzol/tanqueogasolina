@@ -3,6 +3,10 @@ import Header from "../componentes/Header";
 import NavAdmin from "../componentes/NavAdmin";
 import TablaControlComb from "../componentes/tablaControlComb";
 import INVENTARIO from "../mocks/inventario";
+import axios from "axios";
+import Cookies from "universal-cookie";
+
+const URLAPIINGRESO = "http://localhost:3222/api/v1/ingreso/ingresar";
 
 function GestionarPrecio() {
   const formGestionarPrecio = useRef(null);
@@ -11,12 +15,15 @@ function GestionarPrecio() {
     event.preventDefault();
     const formData = new FormData(formGestionarPrecio.current);
     const data = {
-      tipoComb: formData.get("tipoCombustible"),
-      cantidad: formData.get("Cantidad"),
-      fecha: formData.get("fingreso"),
+      tipoCombustible: formData.get("tipoCombustible"),
+      galones: formData.get("Cantidad"),
+      fechaIngreso: formData.get("fingreso"),
       precio: formData.get("precio"),
     };
     console.log(data);
+    const respuesta = axios.post(URLAPIINGRESO, data);
+    window.location.href ='./gestionarprecio';
+
   };
 
   const rtaPrecios =INVENTARIO.map((inventario)=>{
